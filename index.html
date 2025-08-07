@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yariv Friedman - CV</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            background: white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 40px 50px;
+            text-align: center;
+            position: relative;
+        }
+
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 20px;
+            background: linear-gradient(45deg, transparent 49%, white 50%);
+        }
+
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 4px solid rgba(255,255,255,0.2);
+            margin: 0 auto 20px;
+            background: rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            color: rgba(255,255,255,0.8);
+        }
+
+        .name {
+            font-size: 2.5em;
+            font-weight: 300;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+
+        .title {
+            font-size: 1.3em;
+            font-weight: 300;
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.95em;
+            color: rgba(255,255,255,0.9);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .content {
+            padding: 50px;
+        }
+
+        .section {
+            margin-bottom: 50px;
+        }
+
+        .section:last-child {
+            margin-bottom: 0;
+        }
+
+        .section-title {
+            font-size: 1.8em;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #2c3e50;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title i {
+            font-size: 0.8em;
+        }
+
+        .profile-summary {
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: #555;
+            text-align: justify;
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 8px;
+            border-left: 4px solid #2c3e50;
+        }
+
+        .background-item {
+            margin-bottom: 35px;
+            padding: 25px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #e74c3c;
+            transition: all 0.3s ease;
+        }
+
+        .background-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .background-title {
+            font-size: 1.2em;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .background-description {
+            color: #555;
+            line-height: 1.7;
+        }
+
+        .project-item {
+            margin-bottom: 35px;
+            padding: 25px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #3498db;
+            transition: all 0.3s ease;
+        }
+
+        .project-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .project-title {
+            font-size: 1.3em;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 8px;
+        }
+
+        .project-title a {
+            color: #3498db;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .project-title a:hover {
+            color: #2980b9;
+        }
+
+        .project-stack {
+            font-size: 0.9em;
+            color: #7f8c8d;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        .project-description {
+            color: #555;
+            line-height: 1.7;
+        }
+
+        .project-description ul {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+
+        .project-description li {
+            margin-bottom: 8px;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-category {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            border-top: 3px solid #2c3e50;
+        }
+
+        .skill-category h4 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.1em;
+            font-weight: 600;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .skill-tag {
+            background: #2c3e50;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 500;
+        }
+
+        .languages {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .language-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        .language-name {
+            font-weight: 500;
+            color: #333;
+        }
+
+        .language-level {
+            font-size: 0.9em;
+            color: #2c3e50;
+            font-weight: 500;
+        }
+
+        .personal-details {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 8px;
+            border-left: 4px solid #9b59b6;
+        }
+
+        .personal-details ul {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .personal-details li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #555;
+        }
+
+        .personal-details li i {
+            color: #9b59b6;
+            width: 20px;
+        }
+
+        .reels {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .reel-item {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            border-top: 3px solid #e67e22;
+            transition: all 0.3s ease;
+        }
+
+        .reel-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .reel-item a {
+            color: #e67e22;
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .reel-item a:hover {
+            color: #d35400;
+        }
+
+        @media print {
+            body {
+                background: white;
+            }
+            .container {
+                box-shadow: none;
+                margin: 0;
+                max-width: none;
+            }
+            .header::after {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 20px;
+                border-radius: 0;
+            }
+            
+            .header {
+                padding: 30px 25px;
+            }
+            
+            .content {
+                padding: 30px 25px;
+            }
+            
+            .contact-info {
+                gap: 15px;
+            }
+            
+            .contact-item {
+                font-size: 0.85em;
+            }
+            
+            .name {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="profile-img">
+                <i class="fas fa-user-tie"></i>
+            </div>
+            <h1 class="name">Yariv Friedman</h1>
+            <p class="title">Creative Technologist & Systems Thinker</p>
+            <div class="contact-info">
+                <span class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    Geneva, Switzerland
+                </span>
+                <span class="contact-item">
+                    <i class="fas fa-calendar-alt"></i>
+                    Born 1971
+                </span>
+                <a href="https://fommes.org" class="contact-item" target="_blank">
+                    <i class="fas fa-globe"></i>
+                    fommes.org
+                </a>
+                <a href="https://github.com/DBonbon" class="contact-item" target="_blank">
+                    <i class="fab fa-github"></i>
+                    GitHub
+                </a>
+            </div>
+        </header>
+
+        <main class="content">
+            <section class="section">
+                <h2 class="section-title">
+                    <i class="fas fa-compass"></i>
+                    Profile
+                </h2>
+                <div class="profile-summary">
+                    Auto‑didact <strong>creative technologist and systems thinker</strong> with a multidisciplinary background spanning law, film, interactive media, and in recent years, software development. I code, solve hard problems, and get my hands dirty, while excelling as a <strong>technical generalist and integrator</strong> — bridging art, logic, and code to create coherent, scalable systems. Fluent in the languages of diverse specialists, I manage complex data flows and translate between creative and technical teams.
+                    <br><br>
+                    More than coordinating teams or linking disciplines, I identify the deeper structures that unify diverse parts of a system. This lets me analyze complexity, extract shared principles, and design streamlined prototypes that turn disparate elements into a coherent working unit.
+                    <br><br>
+                    My strength lies in <strong>mediating complexity</strong>, aligning multiple perspectives into a unified, functional vision. Best suited for roles that demand <strong>cross‑disciplinary collaboration, rapid prototyping, and systems integration</strong>.
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">
+                    <i class="fas fa-code"></i>
+                    Skills & Technical Specificities
+                </h2>
+                
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h4>Languages & Frameworks</h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">C#</span>
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">Django</span>
+                            <span class="skill-tag">Wagtail</span>
+                            <span class="skill-tag">Next.js</span>
+                            <span class="skill-tag">React</span>
+                            <span class="skill-tag">Unity</span>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h4>Tools & Platforms</h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Docker</span>
+                            <span class="skill-tag">Git</span>
+                            <span class="skill-tag">Render</span>
+                            <span class="skill-tag">Vercel</span>
+                            <span class="skill-tag">CircleCI</span>
+                            <span class="skill-tag">REST APIs</span>
+                            <span class="skill-tag">JSON</span>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h4>Specializations</h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">PWA</span>
+                            <span class="skill-tag">Multilingual</span>
+                            <span class="skill-tag">Authentication</span>
+                            <span class="skill-tag">Real-time Dashboards</span>
+                            <span class="skill-tag">WebGL</span>
+                            <span class="skill-tag">Multiplayer Networking</span>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h4>Conceptual Strengths</h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Modular Architecture</span>
+                            <span class="skill-tag">Systems Thinking</span>
+                            <span class="skill-tag">UI-Logic Separation</span>
+                            <span class="skill-tag">Headless CMS</span>
+                            <span class="skill-tag">Visual Thinking</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">
+                    <i class="fas fa-puzzle-piece"></i>
+                    Personal Background
+                </h2>
+                
+                <div class="background-item">
+                    <h3 class="background-title">Legal Foundation</h3>
+                    <div class="background-description">
+                        Studied <strong>Law and Economics</strong> at Tel Aviv University. Worked as a lawyer at the <strong>International Organization for Migration (IOM)</strong> in Geneva, developing expertise in complex regulatory frameworks and international cooperation.
+                    </div>
+                </div>
+
+                <div class="background-item">
+                    <h3 class="background-title">Documentary Filmmaking</h3>
+                    <div class="background-description">
+                        Transitioned into documentary filmmaking — my film <em>Dialogues with a Lonely Man</em> follows the scientists behind the discovery of the Higgs boson (Nobel Prize 2013) and was shown on major networks across Europe. This work honed my ability to translate complex concepts for diverse audiences.
+                    </div>
+                </div>
+
+                <div class="background-item">
+                    <h3 class="background-title">Programming Journey</h3>
+                    <div class="background-description">
+                        I transitioned into programming via <strong>Blender</strong>, where building animation logic sparked a deeper curiosity about systems and tools. This visual approach to programming became the foundation of my technical thinking.
+                    </div>
+                </div>
+
+                <div class="background-item">
+                    <h3 class="background-title">fommes.org Platform</h3>
+                    <div class="background-description">
+                        Founder of <strong><a href="https://fommes.org" target="_blank">fommes.org</a></strong> — a platform for inclusive language tools, games, and community resources, demonstrating my commitment to technology that serves social good.
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">
+                    <i class="fas fa-tools"></i>
+                    Projects
+                </h2>
+                
+                <div class="project-item">
+                    <h3 class="project-title">
+                        <a href="https://github.com/DBonbon/savima-share" target="_blank">Savima – Rehabilitation Support App (PWA)</a>
+                    </h3>
+                    <p class="project-stack"><strong>Stack:</strong> Django · Wagtail · Next.js · REST · Docker · PWA</p>
+                    <div class="project-description">
+                        Mobile-first app supporting recovery through collaborative tasks with family/friends.
+                        <ul>
+                            <li>Dynamic task engine (available → assigned → completed)</li>
+                            <li>Gamified profiles, secure session auth, multilingual UI</li>
+                            <li><strong>Live design:</strong> <a href="https://fommes.org" target="_blank">fommes.org</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="project-item">
+                    <h3 class="project-title">
+                        <a href="https://github.com/DBonbon/equartets" target="_blank">Unity Multiplayer Quartets Game</a>
+                    </h3>
+                    <p class="project-stack"><strong>Stack:</strong> Unity · C# · Netcode for GameObjects · JSON · WebGL/Desktop</p>
+                    <div class="project-description">
+                        Scalable, 2–4 player online card game with educational potential.
+                        <ul>
+                            <li>Fully server-authoritative architecture</li>
+                            <li>5-layer architecture with logic/UI separation</li>
+                            <li>Future-ready for matchmaking, analytics, and backend sync</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="project-item">
+                    <h3 class="project-title">
+                        <a href="https://github.com/DBonbon/Wagtail-Teki" target="_blank">Wagtail-Teki CMS Platform</a>
+                    </h3>
+                    <p class="project-stack"><strong>Stack:</strong> Django · Wagtail · Next.js · Docker</p>
+                    <div class="project-description">
+                        Modular headless CMS powering <strong><a href="https://fommes.org" target="_blank">fommes.org</a></strong>.
+                        <ul>
+                            <li>API-driven, multilingual, SSR/SSG configurable</li>
+                            <li>Used for publishing inclusive language content</li>
+                            <li>Full developer docs and CI/CD support</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">
+                    <i class="fas fa-film"></i>
+                    Reels
+                </h2>
+                
+                <div class="reels">
+                    <div class="reel-item">
+                        <a href="https://www.youtube.com/watch?v=C5v0h7H2GFQ" target="_blank">
+                            <i class="fas fa-play-circle"></i>
+                            Animation Reel
+                        </a>
+                    </div>
+                    <div class="reel-item">
+                        <a href="https://www.youtube.com/watch?v=8U5tOV-nBmk" target="_blank">
+                            <i class="fas fa-video"></i>
+                            Films Reel
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">
+                    <i class="fas fa-language"></i>
+                    Languages
+                </h2>
+                
+                <div class="languages">
+                    <div class="language-item">
+                        <span class="language-name">English</span>
+                        <span class="language-level">Fluent</span>
+                    </div>
+                    <div class="language-item">
+                        <span class="language-name">French</span>
+                        <span class="language-level">Fluent</span>
+                    </div>
+                    <div class="language-item">
+                        <span class="language-name">Hebrew</span>
+                        <span class="language-level">Native</span>
+                    </div>
+                    <div class="language-item">
+                        <span class="language-name">Spanish</span>
+                        <span class="language-level">Basic</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">
+                    <i class="fas fa-info-circle"></i>
+                    Personal Details
+                </h2>
+                
+                <div class="personal-details">
+                    <ul>
+                        <li>
+                            <i class="fas fa-birthday-cake"></i>
+                            <span>Born 1971</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Geneva, Switzerland</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-users"></i>
+                            <span>Father of two</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>Self-driven learner</span>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
