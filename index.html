@@ -33,31 +33,6 @@
             color: white;
             padding: 40px 50px;
             text-align: center;
-            position: relative;
-        }
-
-        .header::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 20px;
-            background: linear-gradient(45deg, transparent 49%, white 50%);
-        }
-
-        .profile-img {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            border: 4px solid rgba(255,255,255,0.2);
-            margin: 0 auto 20px;
-            background: rgba(255,255,255,0.1);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 48px;
-            color: rgba(255,255,255,0.8);
         }
 
         .name {
@@ -137,12 +112,15 @@
         }
 
         .background-item {
-            margin-bottom: 35px;
+            margin-bottom: 25px;
             padding: 25px;
             background: #f8f9fa;
             border-radius: 8px;
             border-left: 4px solid #e74c3c;
             transition: all 0.3s ease;
+        }
+        .background-item:last-child {
+            margin-bottom: 0;
         }
 
         .background-item:hover {
@@ -170,6 +148,9 @@
             border-left: 4px solid #3498db;
             transition: all 0.3s ease;
         }
+        .project-item:last-child {
+            margin-bottom: 0;
+        }
 
         .project-item:hover {
             transform: translateX(5px);
@@ -183,30 +164,15 @@
             margin-bottom: 8px;
         }
 
-        .project-title a {
-            color: #3498db;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .project-title a:hover {
-            color: #2980b9;
-        }
-
-        .project-stack {
-            font-size: 0.9em;
-            color: #7f8c8d;
-            margin-bottom: 15px;
-            font-weight: 500;
-        }
-
         .project-description {
             color: #555;
             line-height: 1.7;
+            margin-top: 15px;
         }
 
         .project-description ul {
-            margin-left: 20px;
+            list-style-position: inside;
+            padding-left: 0;
             margin-top: 10px;
         }
 
@@ -216,7 +182,7 @@
 
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 20px;
         }
 
@@ -249,92 +215,6 @@
             font-weight: 500;
         }
 
-        .languages {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-        }
-
-        .language-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px;
-            background: #f8f9fa;
-            border-radius: 8px;
-        }
-
-        .language-name {
-            font-weight: 500;
-            color: #333;
-        }
-
-        .language-level {
-            font-size: 0.9em;
-            color: #2c3e50;
-            font-weight: 500;
-        }
-
-        .personal-details {
-            background: #f8f9fa;
-            padding: 25px;
-            border-radius: 8px;
-            border-left: 4px solid #9b59b6;
-        }
-
-        .personal-details ul {
-            list-style: none;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-        }
-
-        .personal-details li {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            color: #555;
-        }
-
-        .personal-details li i {
-            color: #9b59b6;
-            width: 20px;
-        }
-
-        .reels {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
-
-        .reel-item {
-            background: #f8f9fa;
-            padding: 20px;
-            border-radius: 8px;
-            text-align: center;
-            border-top: 3px solid #e67e22;
-            transition: all 0.3s ease;
-        }
-
-        .reel-item:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-
-        .reel-item a {
-            color: #e67e22;
-            text-decoration: none;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-        }
-
-        .reel-item a:hover {
-            color: #d35400;
-        }
-
         @media print {
             body {
                 background: white;
@@ -344,14 +224,11 @@
                 margin: 0;
                 max-width: none;
             }
-            .header::after {
-                display: none;
-            }
         }
 
         @media (max-width: 768px) {
             .container {
-                margin: 20px;
+                margin: 0;
                 border-radius: 0;
             }
             
@@ -365,10 +242,7 @@
             
             .contact-info {
                 gap: 15px;
-            }
-            
-            .contact-item {
-                font-size: 0.85em;
+                flex-direction: column;
             }
             
             .name {
@@ -380,27 +254,20 @@
 <body>
     <div class="container">
         <header class="header">
-            <div class="profile-img">
-                <i class="fas fa-user-tie"></i>
-            </div>
             <h1 class="name">Yariv Friedman</h1>
-            <p class="title">Creative Technologist & Systems Thinker</p>
+            <p class="title">Senior Software Architect & Product Strategist</p>
             <div class="contact-info">
-                <span class="contact-item">
-                    <i class="fas fa-map-marker-alt"></i>
-                    Geneva, Switzerland
-                </span>
-                <span class="contact-item">
-                    <i class="fas fa-calendar-alt"></i>
-                    Born 1971
-                </span>
-                <a href="https://fommes.org" class="contact-item" target="_blank">
-                    <i class="fas fa-globe"></i>
-                    fommes.org
+                <a href="mailto:your.email@example.com" class="contact-item">
+                    <i class="fas fa-envelope"></i> your.email@example.com
                 </a>
-                <a href="https://github.com/DBonbon" class="contact-item" target="_blank">
-                    <i class="fab fa-github"></i>
-                    GitHub
+                <a href="https://linkedin.com/in/your-profile" class="contact-item" target="_blank">
+                    <i class="fab fa-linkedin"></i> LinkedIn
+                </a>
+                <a href="https://github.com/your-username" class="contact-item" target="_blank">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+                <a href="https://fommes.org" class="contact-item" target="_blank">
+                    <i class="fas fa-globe"></i> fommes.org
                 </a>
             </div>
         </header>
@@ -412,20 +279,83 @@
                     Profile
                 </h2>
                 <div class="profile-summary">
-                    Auto‑didact <strong>creative technologist and systems thinker</strong> with a multidisciplinary background spanning law, film, interactive media, and in recent years, software development. I code, solve hard problems, and get my hands dirty, while excelling as a <strong>technical generalist and integrator</strong> — bridging art, logic, and code to create coherent, scalable systems. Fluent in the languages of diverse specialists, I manage complex data flows and translate between creative and technical teams.
-                    <br><br>
-                    More than coordinating teams or linking disciplines, I identify the deeper structures that unify diverse parts of a system. This lets me analyze complexity, extract shared principles, and design streamlined prototypes that turn disparate elements into a coherent working unit.
-                    <br><br>
-                    My strength lies in <strong>mediating complexity</strong>, aligning multiple perspectives into a unified, functional vision. Best suited for roles that demand <strong>cross‑disciplinary collaboration, rapid prototyping, and systems integration</strong>.
+                    A highly versatile and strategic software architect with proven expertise in designing and building complex, scalable, and maintainable applications across both web and real-time multiplayer environments. My experience is defined by a deep commitment to clean architecture, creating robust systems that solve challenging problems—from enterprise-level content platforms to innovative educational games and mission-driven social impact projects. I excel at translating high-level vision into concrete technical strategy, ensuring that the end product is not only technically sound but also effective and engaging for its users.
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">
+                    <i class="fas fa-star"></i>
+                    Core Competencies
+                </h2>
+                <div class="background-item">
+                    <h3 class="background-title">Cross-Domain Systems Architecture</h3>
+                    <div class="background-description">
+                        Expert in architecting sophisticated systems across different technology stacks, including full-stack web (Python, Next.js) and real-time multiplayer platforms (Unity, C#).
+                    </div>
+                </div>
+                <div class="background-item">
+                    <h3 class="background-title">Strategic Product Development</h3>
+                    <div class="background-description">
+                        Proven ability to translate complex social and business challenges into actionable, technology-driven solutions by applying systems thinking and behavioral psychology to product design.
+                    </div>
+                </div>
+                <div class="background-item">
+                    <h3 class="background-title">Complex Problem-Solving & Systems Integration</h3>
+                    <div class="background-description">
+                        Adept at identifying the deep, unifying structures within complex systems to design streamlined, coherent, and highly functional applications.
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">
+                    <i class="fas fa-tools"></i>
+                    Selected Projects & Technical Leadership
+                </h2>
+                
+                <div class="project-item">
+                    <h3 class="project-title">`fommes` | Founder & Lead Architect</h3>
+                    <div class="project-description">
+                        A global digital platform designed to catalyze the worldwide adoption of gender-free language by providing the tools (Means), educational content (Motive), and collaborative space (Opportunity) for communities to drive linguistic innovation.
+                        <ul>
+                            <li>Architected a sophisticated headless system using <strong>Python (Wagtail)</strong> for the backend and <strong>Next.js</strong> for the frontend, deployed with a modern <strong>Docker</strong>-based workflow.</li>
+                            <li>Translated a unique behavioral change model (<strong>MMO: Means-Motive-Opportunity</strong>) into a tangible and engaging user experience.</li>
+                            <li>Engineered an advanced, maintainable frontend design system based on <strong>spacing-agnostic components</strong> to ensure long-term scalability and reusability.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="project-item">
+                    <h3 class="project-title">`netcode04` | Lead Developer & Architect</h3>
+                    <div class="project-description">
+                        A multiplayer educational game platform in <strong>Unity/C#</strong> designed to facilitate second-language acquisition through social gameplay, implemented as a 2-4 player "Quartets" card game.
+                        <ul>
+                            <li>Engineered a fully <strong>server-authoritative</strong> system using <strong>Unity's Netcode for GameObjects (NGO)</strong> to ensure cheat-free, reliable, and secure gameplay.</li>
+                            <li>Designed a sophisticated <strong>five-layer player object model</strong> in C# that cleanly separates data, runtime state, game logic, network synchronization, and UI for high maintainability.</li>
+                            <li>Created a modular, data-driven architecture using JSON for game content and an efficient UI pooling system for dynamic and responsive rendering across multiple platforms (WebGL, Windows, Linux).</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="project-item">
+                    <h3 class="project-title">`Wagtail-Teki` | Architect & Core Contributor</h3>
+                    <div class="project-description">
+                        A production-ready, open-source boilerplate for building scalable, secure, and high-performance headless websites.
+                        <ul>
+                            <li>Designed and implemented the core decoupled architecture using <strong>Django/Wagtail</strong> as a headless CMS and <strong>Next.js/React</strong> for the frontend.</li>
+                            <li>Integrated a modern DevOps workflow with <strong>Docker</strong> for local development, <strong>Ansible</strong> for deployment, and pre-configured <strong>CI/CD</strong> pipelines.</li>
+                            <li>Engineered a flexible and robust foundation that has been adopted by other developers as a "war-machine" for building complex, content-driven web applications.</li>
+                        </ul>
+                    </div>
                 </div>
             </section>
 
             <section class="section">
                 <h2 class="section-title">
                     <i class="fas fa-code"></i>
-                    Skills & Technical Specificities
+                    Technical Skills
                 </h2>
-                
                 <div class="skills-grid">
                     <div class="skill-category">
                         <h4>Languages & Frameworks</h4>
@@ -437,12 +367,11 @@
                             <span class="skill-tag">Wagtail</span>
                             <span class="skill-tag">Next.js</span>
                             <span class="skill-tag">React</span>
-                            <span class="skill-tag">Unity</span>
+                            <span class="skill-tag">Unity (NGO)</span>
                         </div>
                     </div>
-                    
                     <div class="skill-category">
-                        <h4>Tools & Platforms</h4>
+                        <h4>Platforms & Tools</h4>
                         <div class="skill-tags">
                             <span class="skill-tag">Docker</span>
                             <span class="skill-tag">Git</span>
@@ -451,29 +380,20 @@
                             <span class="skill-tag">CircleCI</span>
                             <span class="skill-tag">REST APIs</span>
                             <span class="skill-tag">JSON</span>
+                            <span class="skill-tag">Blender</span>
                         </div>
                     </div>
-                    
                     <div class="skill-category">
-                        <h4>Specializations</h4>
+                        <h4>Architectural Concepts</h4>
                         <div class="skill-tags">
-                            <span class="skill-tag">PWA</span>
-                            <span class="skill-tag">Multilingual</span>
-                            <span class="skill-tag">Authentication</span>
-                            <span class="skill-tag">Real-time Dashboards</span>
-                            <span class="skill-tag">WebGL</span>
-                            <span class="skill-tag">Multiplayer Networking</span>
-                        </div>
-                    </div>
-                    
-                    <div class="skill-category">
-                        <h4>Conceptual Strengths</h4>
-                        <div class="skill-tags">
-                            <span class="skill-tag">Modular Architecture</span>
-                            <span class="skill-tag">Systems Thinking</span>
-                            <span class="skill-tag">UI-Logic Separation</span>
+                            <span class="skill-tag">Server-Authoritative</span>
                             <span class="skill-tag">Headless CMS</span>
-                            <span class="skill-tag">Visual Thinking</span>
+                            <span class="skill-tag">Modular Systems</span>
+                            <span class="skill-tag">Client-Server Design</span>
+                            <span class="skill-tag">UI-Logic Separation</span>
+                            <span class="skill-tag">Data-Driven Design</span>
+                            <span class="skill-tag">SSR/SSG</span>
+                            <span class="skill-tag">CI/CD</span>
                         </div>
                     </div>
                 </div>
@@ -482,169 +402,38 @@
             <section class="section">
                 <h2 class="section-title">
                     <i class="fas fa-puzzle-piece"></i>
-                    Personal Background
+                    Multidisciplinary Foundation
                 </h2>
-                
                 <div class="background-item">
-                    <h3 class="background-title">Legal Foundation</h3>
+                    <h3 class="background-title">Documentary Filmmaker & Director</h3>
                     <div class="background-description">
-                        Studied <strong>Law and Economics</strong> at Tel Aviv University. Worked as a lawyer at the <strong>International Organization for Migration (IOM)</strong> in Geneva, developing expertise in complex regulatory frameworks and international cooperation.
+                        Independently produced and directed a feature film broadcast on major European networks, demonstrating mastery in a competitive field, leadership of creative and technical teams, and the ability to distill highly complex subjects (the discovery of the Higgs boson) into a compelling narrative.
                     </div>
                 </div>
-
                 <div class="background-item">
-                    <h3 class="background-title">Documentary Filmmaking</h3>
+                    <h3 class="background-title">International Lawyer (IOM, Geneva)</h3>
                     <div class="background-description">
-                        Transitioned into documentary filmmaking — my film <em>Dialogues with a Lonely Man</em> follows the scientists behind the discovery of the Higgs boson (Nobel Prize 2013) and was shown on major networks across Europe. This work honed my ability to translate complex concepts for diverse audiences.
+                        Practiced law in a high-stakes environment, cultivating exceptional analytical rigor and systemic problem-solving skills by navigating complex international legal frameworks.
                     </div>
                 </div>
-
                 <div class="background-item">
-                    <h3 class="background-title">Programming Journey</h3>
+                    <h3 class="background-title">Recognition for Conceptual Insight</h3>
                     <div class="background-description">
-                        I transitioned into programming via <strong>Blender</strong>, where building animation logic sparked a deeper curiosity about systems and tools. This visual approach to programming became the foundation of my technical thinking.
-                    </div>
-                </div>
-
-                <div class="background-item">
-                    <h3 class="background-title">fommes.org Platform</h3>
-                    <div class="background-description">
-                        Founder of <strong><a href="https://fommes.org" target="_blank">fommes.org</a></strong> — a platform for inclusive language tools, games, and community resources, demonstrating my commitment to technology that serves social good.
+                        My ability to distill complex topics was recognized by the scientific community when a leading CERN physicist quoted my formulation to conclude a 2017 scientific address on the Higgs boson discovery: <em>"The act of discovery is basically what creates the unknown."</em>
                     </div>
                 </div>
             </section>
 
             <section class="section">
                 <h2 class="section-title">
-                    <i class="fas fa-tools"></i>
-                    Projects
+                    <i class="fas fa-graduation-cap"></i>
+                    Education
                 </h2>
-                
-                <div class="project-item">
-                    <h3 class="project-title">
-                        <a href="https://github.com/DBonbon/savima-share" target="_blank">Savima – Rehabilitation Support App (PWA)</a>
-                    </h3>
-                    <p class="project-stack"><strong>Stack:</strong> Django · Wagtail · Next.js · REST · Docker · PWA</p>
-                    <div class="project-description">
-                        Mobile-first app supporting recovery through collaborative tasks with family/friends.
-                        <ul>
-                            <li>Dynamic task engine (available → assigned → completed)</li>
-                            <li>Gamified profiles, secure session auth, multilingual UI</li>
-                            <li><strong>Live design:</strong> <a href="https://fommes.org" target="_blank">fommes.org</a></li>
-                        </ul>
+                <div class="background-item">
+                    <h3 class="background-title">Tel Aviv University</h3>
+                    <div class="background-description">
+                        Studied Law and Economics.
                     </div>
-                </div>
-
-                <div class="project-item">
-                    <h3 class="project-title">
-                        <a href="https://github.com/DBonbon/equartets" target="_blank">Unity Multiplayer Quartets Game</a>
-                    </h3>
-                    <p class="project-stack"><strong>Stack:</strong> Unity · C# · Netcode for GameObjects · JSON · WebGL/Desktop</p>
-                    <div class="project-description">
-                        Scalable, 2–4 player online card game with educational potential.
-                        <ul>
-                            <li>Fully server-authoritative architecture</li>
-                            <li>5-layer architecture with logic/UI separation</li>
-                            <li>Future-ready for matchmaking, analytics, and backend sync</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="project-item">
-                    <h3 class="project-title">
-                        <a href="https://github.com/DBonbon/Wagtail-Teki" target="_blank">Wagtail-Teki CMS Platform</a>
-                    </h3>
-                    <p class="project-stack"><strong>Stack:</strong> Django · Wagtail · Next.js · Docker</p>
-                    <div class="project-description">
-                        Modular headless CMS powering <strong><a href="https://fommes.org" target="_blank">fommes.org</a></strong>.
-                        <ul>
-                            <li>API-driven, multilingual, SSR/SSG configurable</li>
-                            <li>Used for publishing inclusive language content</li>
-                            <li>Full developer docs and CI/CD support</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-            <section class="section">
-                <h2 class="section-title">
-                    <i class="fas fa-film"></i>
-                    Publications & Media
-                </h2>
-                
-                <div class="reels">
-                    <div class="reel-item">
-                        <a href="https://www.youtube.com/watch?v=C5v0h7H2GFQ" target="_blank">
-                            <i class="fas fa-play-circle"></i>
-                            Animation Reel
-                        </a>
-                    </div>
-                    <div class="reel-item">
-                        <a href="https://www.youtube.com/watch?v=8U5tOV-nBmk" target="_blank">
-                            <i class="fas fa-video"></i>
-                            Films Reel
-                        </a>
-                    </div>
-                    <div class="reel-item">
-                        <a href="./DIS17_Higgs_ChiaraMariotti.pdf" target="_blank">
-                            <i class="fas fa-file-pdf"></i>
-                            Higgs Physics at the LHC
-                        </a>
-                    </div>
-                </div>
-            </section>
-
-            <section class="section">
-                <h2 class="section-title">
-                    <i class="fas fa-language"></i>
-                    Languages
-                </h2>
-                
-                <div class="languages">
-                    <div class="language-item">
-                        <span class="language-name">English</span>
-                        <span class="language-level">Fluent</span>
-                    </div>
-                    <div class="language-item">
-                        <span class="language-name">French</span>
-                        <span class="language-level">Fluent</span>
-                    </div>
-                    <div class="language-item">
-                        <span class="language-name">Hebrew</span>
-                        <span class="language-level">Native</span>
-                    </div>
-                    <div class="language-item">
-                        <span class="language-name">Spanish</span>
-                        <span class="language-level">Basic</span>
-                    </div>
-                </div>
-            </section>
-
-            <section class="section">
-                <h2 class="section-title">
-                    <i class="fas fa-info-circle"></i>
-                    Personal Details
-                </h2>
-                
-                <div class="personal-details">
-                    <ul>
-                        <li>
-                            <i class="fas fa-birthday-cake"></i>
-                            <span>Born 1971</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>Geneva, Switzerland</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-users"></i>
-                            <span>Father of two</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-graduation-cap"></i>
-                            <span>Self-driven learner</span>
-                        </li>
-                    </ul>
                 </div>
             </section>
         </main>
