@@ -1,0 +1,18 @@
+{
+	"folders": [
+		{
+			"name": "Yariv-CV",
+			"path": "."
+		},
+		{
+			"path": "../../pycharmProjects/Wagtail-Teki"
+		},
+		{
+			"path": "../../pycharmProjects/fommes"
+		},
+		{
+			"path": "../../unity/netcode04"
+		}
+	],
+	"settings": {}
+}

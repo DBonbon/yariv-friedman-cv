@@ -43,7 +43,7 @@ Full-Stack & Frontend Mastery: Architected and built scalable, decoupled web app
 Socio-Technical Design: Demonstrated capacity for deep analysis of socio-linguistic issues, designing and building platforms that act as catalysts for community-led, organic change rather than imposing top-down solutions.
 
 
-notes on Netcode04:
+notes on Quartets:
 
 Core Technical Features:
 
